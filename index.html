@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="header-content">
+
+            <div>
+
+                <h1>Student Task Manager</h1>
+
+                <p>
+                    Organize your assignments,
+                    deadlines and priorities.
+                </p>
+
+            </div>
+
+            <button id="logoutBtn" class="logout-btn">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= LOGIN / REGISTER ================= -->
+
+    <main id="authSection">
+
+        <div class="auth-card">
+
+            <h2>Welcome 👋</h2>
+
+            <p class="subtitle">
+                Login or create your student account
+            </p>
+
+
+            <!-- REGISTER -->
+
+            <div class="auth-form">
+
+                <h3>Create Account</h3>
+
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Email"
+                >
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Password"
+                >
+
+                <button id="registerBtn">
+                    Create Account
+                </button>
+
+            </div>
+
+
+            <div class="divider">
+                OR
+            </div>
+
+
+            <!-- LOGIN -->
+
+            <div class="auth-form">
+
+                <h3>Login</h3>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Email"
+                >
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Password"
+                >
+
+                <button id="loginBtn">
+                    Login
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <main id="appSection">
+
+
+        <!-- WELCOME -->
+
+        <section class="welcome-section">
+
+            <div>
+
+                <h2>My Dashboard</h2>
+
+                <p id="userEmail"></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STATISTICS ================= -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <h3 id="totalTasks">
+                    0
+                </h3>
+
+                <p>Total Tasks</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3 id="completedTasks">
+                    0
+                </h3>
+
+                <p>Completed</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3 id="pendingTasks">
+                    0
+                </h3>
+
+                <p>Pending</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ADD TASK ================= -->
+
+        <section class="card">
+
+            <h2>Add New Task</h2>
+
+            <div class="form-grid">
+
+                <input
+                    type="text"
+                    id="taskTitle"
+                    placeholder="Task name"
+                >
+
+                <input
+                    type="text"
+                    id="taskSubject"
+                    placeholder="Subject"
+                >
+
+                <input
+                    type="date"
+                    id="taskDeadline"
+                >
+
+                <select id="taskPriority">
+
+                    <option value="Low">
+                        Low Priority
+                    </option>
+
+                    <option value="Medium">
+                        Medium Priority
+                    </option>
+
+                    <option value="High">
+                        High Priority
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button id="addTaskBtn">
+                + Add Task
+            </button>
+
+        </section>
+
+
+        <!-- ================= SEARCH / FILTER ================= -->
+
+        <section class="card">
+
+            <div class="search-row">
+
+                <input
+                    type="text"
+                    id="searchTask"
+                    placeholder="🔍 Search tasks..."
+                >
+
+
+                <select id="filterPriority">
+
+                    <option value="All">
+                        All Priorities
+                    </option>
+
+                    <option value="High">
+                        High
+                    </option>
+
+                    <option value="Medium">
+                        Medium
+                    </option>
+
+                    <option value="Low">
+                        Low
+                    </option>
+
+                </select>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TASK LIST ================= -->
+
+        <section class="card">
+
+            <div class="task-heading">
+
+                <h2>My Tasks</h2>
+
+                <span id="taskCount">
+                    0 tasks
+                </span>
+
+            </div>
+
+
+            <div id="taskList">
+
+                <p class="empty-message">
+                    No tasks yet. Add your first task!
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script
+    type="module"
+    src="firebase.js">
+</script>
+
+<script
+    type="module"
+    src="script.js">
+</script>
+
+</body>
+</html>
